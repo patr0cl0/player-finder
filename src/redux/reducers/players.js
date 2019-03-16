@@ -9,7 +9,7 @@ const GET_PLAYERS_FAIL = 'players-finder/players/GET_PLAYERS_FAIL';
 const initalState = {
   pending: false,
   error: '',
-  players: [],
+  data: [],
 };
 
 // Needed variables
@@ -31,7 +31,7 @@ export default function reducer(state = initalState, action) {
       return {
         ...state,
         pending: false,
-        players: action.payload,
+        data: action.payload,
       };
 
     case GET_PLAYERS_FAIL:
