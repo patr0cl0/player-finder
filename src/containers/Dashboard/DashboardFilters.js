@@ -8,7 +8,7 @@ import { withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import * as yup from 'yup';
-import { availablePositions } from '../../utils';
+import { availablePositions, availablePlayerAges } from '../../utils';
 
 export const DashboardFilters = ({
   values: { name, age, position },
@@ -31,15 +31,19 @@ export const DashboardFilters = ({
 
     <Grid item xs={12} md={3}>
       <TextField
+        select
         fullWidth
-        type="number"
-        placeholder="Age"
+        label="Age"
         name="age"
         value={age}
-        error={!!errors.age}
-        label={errors.age || 'Age'}
         onChange={handleChange}
-      />
+      >
+        <MenuItem value="none">{' '}</MenuItem>
+
+        {availablePlayerAges.map(a => (
+          <MenuItem key={a} value={a}>{a}</MenuItem>
+        ))}
+      </TextField>
     </Grid>
 
     <Grid item xs={12} md={3}>
@@ -51,6 +55,8 @@ export const DashboardFilters = ({
         value={position}
         onChange={handleChange}
       >
+        <MenuItem value="none">{' '}</MenuItem>
+
         {availablePositions.map(p => (
           <MenuItem key={p} value={p}>{p}</MenuItem>
         ))}
@@ -80,7 +86,7 @@ DashboardFilters.propTypes = {
   values: PropTypes.shape({
     name: PropTypes.string,
     position: PropTypes.string,
-    age: PropTypes.number,
+    age: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }).isRequired,
   errors: PropTypes.shape({
     name: PropTypes.string,
@@ -92,22 +98,19 @@ DashboardFilters.propTypes = {
 export default withFormik({
   mapPropsToValues: () => ({
     name: '',
-    position: 'any',
-    age: 18,
+    position: 'none',
+    age: 'none',
   }),
   validationSchema: yup.object({
     name: yup
       .string()
       // The regex match all and ONLY alphabetic characters.
       .matches(/^[a-zA-Z|Ñ|ñ|\-| ]+$/, 'Name can only contain characters'),
-    age: yup
-      .number()
-      .transform(age => Number(age))
-      .min(18, 'Minimun age is 18')
-      .max(40, 'Maximun age is 40'),
   }),
-  handleSubmit: (values) => {
-    console.log(values);
+  handleSubmit: (values, { props }) => {
+    const { onSubmit: handleSubmit } = props;
+    handleSubmit(values);
+    // console.log(values);
     // try {
     // } catch (error) {
 

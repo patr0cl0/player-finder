@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PlayersTable from '../../components/PlayersTable';
-import { getPlayers } from '../../redux/reducers/players';
+import { getPlayers, filterPlayers } from '../../redux/reducers/players';
 import { calculateAge } from '../../utils';
 import Filters from './DashboardFilters';
 
@@ -22,9 +22,11 @@ const styles = theme => ({
 
 class Dashboard extends Component {
   componentDidMount() {
-    const { fetchPlayers } = this.props;
+    this.props.getPlayers();
+  }
 
-    fetchPlayers();
+  handleFilterSubmit = (data) => {
+    this.props.filterPlayers(data);
   }
 
   render() {
@@ -49,7 +51,9 @@ class Dashboard extends Component {
         </Grid>
 
         <Grid item xs={12}>
-          <Filters />
+          <Filters
+            onSubmit={this.handleFilterSubmit}
+          />
         </Grid>
 
         <Grid item md={6} xs={12}>
@@ -66,7 +70,8 @@ Dashboard.propTypes = {
   classes: PropTypes.shape({
     asd: '',
   }).isRequired,
-  fetchPlayers: PropTypes.func.isRequired,
+  getPlayers: PropTypes.func.isRequired,
+  filterPlayers: PropTypes.func.isRequired,
   players: PropTypes.shape({
     pending: PropTypes.bool,
     error: PropTypes.string,
@@ -80,7 +85,7 @@ const mapStateToProps = ({ players }) => ({
   players: {
     pending: players.pending,
     error: players.error,
-    data: players.data.map(player => ({
+    data: players.filteredData.map(player => ({
       name: player.name,
       position: player.position,
       age: calculateAge(player.dateOfBirth),
@@ -88,6 +93,6 @@ const mapStateToProps = ({ players }) => ({
   },
 });
 
-const mapDispatchToProps = { fetchPlayers: getPlayers };
+const mapDispatchToProps = { getPlayers, filterPlayers };
 
 export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

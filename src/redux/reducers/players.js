@@ -1,15 +1,17 @@
 import Axios from 'axios';
-
+import { calculateAge } from '../../utils';
 // Actions types
 const GET_PLAYERS_PENDING = 'players-finder/players/GET_PLAYERS_PENDING';
 const GET_PLAYERS_SUCCESS = 'players-finder/players/GET_PLAYERS_SUCCESS';
 const GET_PLAYERS_FAIL = 'players-finder/players/GET_PLAYERS_FAIL';
+const FILTER_PLAYERS = 'players-finder/players/FILTER_PLAYERS';
 
 // Reducer initial state
 const initalState = {
   pending: false,
   error: '',
   data: [],
+  filteredData: [],
 };
 
 // Needed variables
@@ -32,6 +34,13 @@ export default function reducer(state = initalState, action) {
         ...state,
         pending: false,
         data: action.payload,
+        filteredData: action.payload,
+      };
+    case FILTER_PLAYERS:
+      return {
+        ...state,
+        pending: false,
+        filteredData: action.payload,
       };
 
     case GET_PLAYERS_FAIL:
@@ -62,7 +71,6 @@ export const getPlayersFail = payload => ({
   payload,
 });
 
-
 // Actions
 export const getPlayers = () => async (dispatch) => {
   try {
@@ -73,4 +81,34 @@ export const getPlayers = () => async (dispatch) => {
   } catch (error) {
     dispatch(getPlayersFail(DEFAULT_ERROR_MESSAGE));
   }
+};
+
+// Expected filters: by name, by age and by position.
+export const filterPlayers = filters => (dispatch, getState) => {
+  const { players: { data } } = getState();
+  const { name, age, position } = filters;
+
+  // Loop through players and check if the player match the filter.
+  const filteredPlayers = data.filter((player) => {
+    if (name && !player.name.includes(name)) {
+      return false;
+    }
+
+    if (position && position !== 'none' && player.position !== position) {
+      return false;
+    }
+
+    if (age && age !== 'none' && calculateAge(player.dateOfBirth) !== age) {
+      return false;
+    }
+
+    return true;
+  });
+
+  // To avoid rerenders and also save some work for reselect.
+  // if (filteredPlayers.length === data.length) {
+  //   return;
+  // }
+
+  dispatch({ type: FILTER_PLAYERS, payload: filteredPlayers });
 };
