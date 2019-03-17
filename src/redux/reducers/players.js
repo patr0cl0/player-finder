@@ -39,7 +39,6 @@ export default function reducer(state = initalState, action) {
     case FILTER_PLAYERS:
       return {
         ...state,
-        pending: false,
         filteredData: action.payload,
       };
 
@@ -105,10 +104,6 @@ export const filterPlayers = filters => (dispatch, getState) => {
     return true;
   });
 
-  // To avoid rerenders and also save some work for reselect.
-  // if (filteredPlayers.length === data.length) {
-  //   return;
-  // }
 
   dispatch({ type: FILTER_PLAYERS, payload: filteredPlayers });
 };

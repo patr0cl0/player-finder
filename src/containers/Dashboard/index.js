@@ -7,6 +7,7 @@ import PlayersTable from '../../components/PlayersTable';
 import { getPlayers, filterPlayers } from '../../redux/reducers/players';
 import { calculateAge } from '../../utils';
 import Filters from './DashboardFilters';
+import { createSelector } from 'reselect';
 
 const styles = theme => ({
   root: {
@@ -74,22 +75,29 @@ Dashboard.propTypes = {
   filterPlayers: PropTypes.func.isRequired,
   players: PropTypes.shape({
     pending: PropTypes.bool,
-    error: PropTypes.string,
+    // error: PropTypes.string,
     data: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
     })),
   }).isRequired,
 };
 
+const getPlayersSelec = state => state.filteredData;
+
+const filteredPlayersSelector = createSelector(
+  getPlayersSelec,
+  (players) => players.map(player => ({
+    name: player.name,
+    position: player.position,
+    age: calculateAge(player.dateOfBirth),
+  }))
+);
+
+
 const mapStateToProps = ({ players }) => ({
   players: {
     pending: players.pending,
-    error: players.error,
-    data: players.filteredData.map(player => ({
-      name: player.name,
-      position: player.position,
-      age: calculateAge(player.dateOfBirth),
-    })),
+    data: filteredPlayersSelector(players)
   },
 });
 
