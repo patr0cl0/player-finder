@@ -19,7 +19,7 @@ const PlayersTable = ({ data }) => (
     </TableHead>
     <TableBody>
       {data.map(player => (
-        <TableRow key={player.name + player.position}>
+        <TableRow key={player.name + player.position} className="PlayersTable--row">
           <TableCell>{player.name}</TableCell>
           <TableCell>{player.position}</TableCell>
           <TableCell>{player.age}</TableCell>

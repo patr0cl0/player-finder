@@ -1,10 +1,10 @@
 import Axios from 'axios';
 import { calculateAge } from '../../utils';
 // Actions types
-const GET_PLAYERS_PENDING = 'players-finder/players/GET_PLAYERS_PENDING';
-const GET_PLAYERS_SUCCESS = 'players-finder/players/GET_PLAYERS_SUCCESS';
-const GET_PLAYERS_FAIL = 'players-finder/players/GET_PLAYERS_FAIL';
-const FILTER_PLAYERS = 'players-finder/players/FILTER_PLAYERS';
+export const GET_PLAYERS_PENDING = 'players-finder/players/GET_PLAYERS_PENDING';
+export const GET_PLAYERS_SUCCESS = 'players-finder/players/GET_PLAYERS_SUCCESS';
+export const GET_PLAYERS_FAIL = 'players-finder/players/GET_PLAYERS_FAIL';
+export const FILTER_PLAYERS = 'players-finder/players/FILTER_PLAYERS';
 
 // Reducer initial state
 const initalState = {
@@ -89,7 +89,7 @@ export const filterPlayers = filters => (dispatch, getState) => {
 
   // Loop through players and check if the player match the filter.
   const filteredPlayers = data.filter((player) => {
-    if (name && !player.name.includes(name)) {
+    if (name && !player.name.toLowerCase().trim().includes(name.toLowerCase().trim())) {
       return false;
     }
 

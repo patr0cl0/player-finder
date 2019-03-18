@@ -21,7 +21,7 @@ const styles = theme => ({
   },
 });
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   componentDidMount() {
     this.props.getPlayers();
   }

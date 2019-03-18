@@ -1,0 +1,896 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard tests should render properly and fetch players 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Dashboard
+    classes={Object {}}
+    filterPlayers={[MockFunction]}
+    getPlayers={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    players={
+      Object {
+        "data": Array [],
+        "pending": false,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "alignItems": "center",
+      "children": Array [
+        <WithStyles(Grid)
+          item={true}
+          xs={12}
+        >
+          <WithStyles(Typography)
+            align="center"
+            variant="display1"
+          >
+            Football Player Finder
+          </WithStyles(Typography)>
+        </WithStyles(Grid)>,
+        <WithStyles(Grid)
+          item={true}
+          xs={12}
+        >
+          <WithFormik(DashboardFilters)
+            onSubmit={[Function]}
+          />
+        </WithStyles(Grid)>,
+        <WithStyles(Grid)
+          item={true}
+          md={6}
+          xs={12}
+        >
+          <WithStyles(Paper)>
+            <PlayersTable
+              data={Array []}
+            />
+          </WithStyles(Paper)>
+        </WithStyles(Grid)>,
+      ],
+      "className": undefined,
+      "container": true,
+      "hidden": false,
+      "justify": "center",
+      "spacing": 16,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithStyles(Typography)
+            align="center"
+            variant="display1"
+          >
+            Football Player Finder
+          </WithStyles(Typography)>,
+          "item": true,
+          "xs": 12,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": "Football Player Finder",
+            "variant": "display1",
+          },
+          "ref": null,
+          "rendered": "Football Player Finder",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithFormik(DashboardFilters)
+            onSubmit={[Function]}
+          />,
+          "item": true,
+          "xs": 12,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithStyles(Paper)>
+            <PlayersTable
+              data={Array []}
+            />
+          </WithStyles(Paper)>,
+          "item": true,
+          "md": 6,
+          "xs": 12,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <PlayersTable
+              data={Array []}
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "data": Array [],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "alignItems": "center",
+        "children": Array [
+          <WithStyles(Grid)
+            item={true}
+            xs={12}
+          >
+            <WithStyles(Typography)
+              align="center"
+              variant="display1"
+            >
+              Football Player Finder
+            </WithStyles(Typography)>
+          </WithStyles(Grid)>,
+          <WithStyles(Grid)
+            item={true}
+            xs={12}
+          >
+            <WithFormik(DashboardFilters)
+              onSubmit={[Function]}
+            />
+          </WithStyles(Grid)>,
+          <WithStyles(Grid)
+            item={true}
+            md={6}
+            xs={12}
+          >
+            <WithStyles(Paper)>
+              <PlayersTable
+                data={Array []}
+              />
+            </WithStyles(Paper)>
+          </WithStyles(Grid)>,
+        ],
+        "className": undefined,
+        "container": true,
+        "hidden": false,
+        "justify": "center",
+        "spacing": 16,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Typography)
+              align="center"
+              variant="display1"
+            >
+              Football Player Finder
+            </WithStyles(Typography)>,
+            "item": true,
+            "xs": 12,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "align": "center",
+              "children": "Football Player Finder",
+              "variant": "display1",
+            },
+            "ref": null,
+            "rendered": "Football Player Finder",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithFormik(DashboardFilters)
+              onSubmit={[Function]}
+            />,
+            "item": true,
+            "xs": 12,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Paper)>
+              <PlayersTable
+                data={Array []}
+              />
+            </WithStyles(Paper)>,
+            "item": true,
+            "md": 6,
+            "xs": 12,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <PlayersTable
+                data={Array []}
+              />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "data": Array [],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`Dashboard tests should render properly with players 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Dashboard
+    classes={Object {}}
+    filterPlayers={[MockFunction]}
+    getPlayers={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    players={
+      Object {
+        "classes": Object {},
+        "data": Array [
+          Object {
+            "contractUntil": "2022-06-30",
+            "dateOfBirth": "1993-05-13",
+            "jerseyNumber": 9,
+            "name": "Romelu Lukaku",
+            "nationality": "Belgium",
+            "position": "Centre-Forward",
+          },
+          Object {
+            "contractUntil": "2019-06-30",
+            "dateOfBirth": "1990-11-07",
+            "jerseyNumber": 1,
+            "name": "David de Gea",
+            "nationality": "Spain",
+            "position": "Keeper",
+          },
+        ],
+        "filterPlayers": [MockFunction],
+        "getPlayers": [MockFunction] {
+          "calls": Array [
+            Array [],
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "players": Object {
+          "data": Array [],
+          "pending": false,
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "alignItems": "center",
+      "children": Array [
+        <WithStyles(Grid)
+          item={true}
+          xs={12}
+        >
+          <WithStyles(Typography)
+            align="center"
+            variant="display1"
+          >
+            Football Player Finder
+          </WithStyles(Typography)>
+        </WithStyles(Grid)>,
+        <WithStyles(Grid)
+          item={true}
+          xs={12}
+        >
+          <WithFormik(DashboardFilters)
+            onSubmit={[Function]}
+          />
+        </WithStyles(Grid)>,
+        <WithStyles(Grid)
+          item={true}
+          md={6}
+          xs={12}
+        >
+          <WithStyles(Paper)>
+            <PlayersTable
+              data={
+                Array [
+                  Object {
+                    "contractUntil": "2022-06-30",
+                    "dateOfBirth": "1993-05-13",
+                    "jerseyNumber": 9,
+                    "name": "Romelu Lukaku",
+                    "nationality": "Belgium",
+                    "position": "Centre-Forward",
+                  },
+                  Object {
+                    "contractUntil": "2019-06-30",
+                    "dateOfBirth": "1990-11-07",
+                    "jerseyNumber": 1,
+                    "name": "David de Gea",
+                    "nationality": "Spain",
+                    "position": "Keeper",
+                  },
+                ]
+              }
+            />
+          </WithStyles(Paper)>
+        </WithStyles(Grid)>,
+      ],
+      "className": undefined,
+      "container": true,
+      "hidden": undefined,
+      "justify": "center",
+      "spacing": 16,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithStyles(Typography)
+            align="center"
+            variant="display1"
+          >
+            Football Player Finder
+          </WithStyles(Typography)>,
+          "item": true,
+          "xs": 12,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": "Football Player Finder",
+            "variant": "display1",
+          },
+          "ref": null,
+          "rendered": "Football Player Finder",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithFormik(DashboardFilters)
+            onSubmit={[Function]}
+          />,
+          "item": true,
+          "xs": 12,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithStyles(Paper)>
+            <PlayersTable
+              data={
+                Array [
+                  Object {
+                    "contractUntil": "2022-06-30",
+                    "dateOfBirth": "1993-05-13",
+                    "jerseyNumber": 9,
+                    "name": "Romelu Lukaku",
+                    "nationality": "Belgium",
+                    "position": "Centre-Forward",
+                  },
+                  Object {
+                    "contractUntil": "2019-06-30",
+                    "dateOfBirth": "1990-11-07",
+                    "jerseyNumber": 1,
+                    "name": "David de Gea",
+                    "nationality": "Spain",
+                    "position": "Keeper",
+                  },
+                ]
+              }
+            />
+          </WithStyles(Paper)>,
+          "item": true,
+          "md": 6,
+          "xs": 12,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <PlayersTable
+              data={
+                Array [
+                  Object {
+                    "contractUntil": "2022-06-30",
+                    "dateOfBirth": "1993-05-13",
+                    "jerseyNumber": 9,
+                    "name": "Romelu Lukaku",
+                    "nationality": "Belgium",
+                    "position": "Centre-Forward",
+                  },
+                  Object {
+                    "contractUntil": "2019-06-30",
+                    "dateOfBirth": "1990-11-07",
+                    "jerseyNumber": 1,
+                    "name": "David de Gea",
+                    "nationality": "Spain",
+                    "position": "Keeper",
+                  },
+                ]
+              }
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "data": Array [
+                Object {
+                  "contractUntil": "2022-06-30",
+                  "dateOfBirth": "1993-05-13",
+                  "jerseyNumber": 9,
+                  "name": "Romelu Lukaku",
+                  "nationality": "Belgium",
+                  "position": "Centre-Forward",
+                },
+                Object {
+                  "contractUntil": "2019-06-30",
+                  "dateOfBirth": "1990-11-07",
+                  "jerseyNumber": 1,
+                  "name": "David de Gea",
+                  "nationality": "Spain",
+                  "position": "Keeper",
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "alignItems": "center",
+        "children": Array [
+          <WithStyles(Grid)
+            item={true}
+            xs={12}
+          >
+            <WithStyles(Typography)
+              align="center"
+              variant="display1"
+            >
+              Football Player Finder
+            </WithStyles(Typography)>
+          </WithStyles(Grid)>,
+          <WithStyles(Grid)
+            item={true}
+            xs={12}
+          >
+            <WithFormik(DashboardFilters)
+              onSubmit={[Function]}
+            />
+          </WithStyles(Grid)>,
+          <WithStyles(Grid)
+            item={true}
+            md={6}
+            xs={12}
+          >
+            <WithStyles(Paper)>
+              <PlayersTable
+                data={
+                  Array [
+                    Object {
+                      "contractUntil": "2022-06-30",
+                      "dateOfBirth": "1993-05-13",
+                      "jerseyNumber": 9,
+                      "name": "Romelu Lukaku",
+                      "nationality": "Belgium",
+                      "position": "Centre-Forward",
+                    },
+                    Object {
+                      "contractUntil": "2019-06-30",
+                      "dateOfBirth": "1990-11-07",
+                      "jerseyNumber": 1,
+                      "name": "David de Gea",
+                      "nationality": "Spain",
+                      "position": "Keeper",
+                    },
+                  ]
+                }
+              />
+            </WithStyles(Paper)>
+          </WithStyles(Grid)>,
+        ],
+        "className": undefined,
+        "container": true,
+        "hidden": undefined,
+        "justify": "center",
+        "spacing": 16,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Typography)
+              align="center"
+              variant="display1"
+            >
+              Football Player Finder
+            </WithStyles(Typography)>,
+            "item": true,
+            "xs": 12,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "align": "center",
+              "children": "Football Player Finder",
+              "variant": "display1",
+            },
+            "ref": null,
+            "rendered": "Football Player Finder",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithFormik(DashboardFilters)
+              onSubmit={[Function]}
+            />,
+            "item": true,
+            "xs": 12,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Paper)>
+              <PlayersTable
+                data={
+                  Array [
+                    Object {
+                      "contractUntil": "2022-06-30",
+                      "dateOfBirth": "1993-05-13",
+                      "jerseyNumber": 9,
+                      "name": "Romelu Lukaku",
+                      "nationality": "Belgium",
+                      "position": "Centre-Forward",
+                    },
+                    Object {
+                      "contractUntil": "2019-06-30",
+                      "dateOfBirth": "1990-11-07",
+                      "jerseyNumber": 1,
+                      "name": "David de Gea",
+                      "nationality": "Spain",
+                      "position": "Keeper",
+                    },
+                  ]
+                }
+              />
+            </WithStyles(Paper)>,
+            "item": true,
+            "md": 6,
+            "xs": 12,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <PlayersTable
+                data={
+                  Array [
+                    Object {
+                      "contractUntil": "2022-06-30",
+                      "dateOfBirth": "1993-05-13",
+                      "jerseyNumber": 9,
+                      "name": "Romelu Lukaku",
+                      "nationality": "Belgium",
+                      "position": "Centre-Forward",
+                    },
+                    Object {
+                      "contractUntil": "2019-06-30",
+                      "dateOfBirth": "1990-11-07",
+                      "jerseyNumber": 1,
+                      "name": "David de Gea",
+                      "nationality": "Spain",
+                      "position": "Keeper",
+                    },
+                  ]
+                }
+              />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "data": Array [
+                  Object {
+                    "contractUntil": "2022-06-30",
+                    "dateOfBirth": "1993-05-13",
+                    "jerseyNumber": 9,
+                    "name": "Romelu Lukaku",
+                    "nationality": "Belgium",
+                    "position": "Centre-Forward",
+                  },
+                  Object {
+                    "contractUntil": "2019-06-30",
+                    "dateOfBirth": "1990-11-07",
+                    "jerseyNumber": 1,
+                    "name": "David de Gea",
+                    "nationality": "Spain",
+                    "position": "Keeper",
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
