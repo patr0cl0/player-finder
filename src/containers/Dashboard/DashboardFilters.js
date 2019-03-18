@@ -4,7 +4,7 @@ import {
   MenuItem,
   TextField,
 } from '@material-ui/core';
-import { Formik, withFormik } from 'formik';
+import { withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import * as yup from 'yup';
@@ -95,27 +95,21 @@ DashboardFilters.propTypes = {
   }),
 };
 
-const mapPropsToValues = () => ({
-  name: '',
-  position: 'none',
-  age: 'none',
-})
-
-const validationSchema = yup.object({
-  name: yup
-    .string()
-    // The regex match all and ONLY alphabetic characters.
-    .matches(/^[a-zA-Z|Ñ|ñ|\-| ]+$/, 'Name can only contain characters'),
-})
-
-const handleSubmit = (values, { props }) => {
-  const { onSubmit } = props;
-
-  onSubmit(values);
-}
-
 export default withFormik({
-  mapPropsToValues,
-  validationSchema,
-  handleSubmit,
+  mapPropsToValues: () => ({
+    name: '',
+    position: 'none',
+    age: 'none',
+  }),
+  validationSchema: yup.object({
+    name: yup
+      .string()
+      // The regex match all and ONLY alphabetic characters.
+      .matches(/^[a-zA-Z|Ñ|ñ|\-| ]+$/, 'Name can only contain characters'),
+  }),
+  handleSubmit: (values, { props }) => {
+    const { onSubmit: handleSubmit } = props;
+
+    handleSubmit(values);
+  },
 })(DashboardFilters);
