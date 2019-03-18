@@ -5,14 +5,10 @@ import axios from 'axios';
 import playersReducer, {
   GET_PLAYERS_PENDING,
   GET_PLAYERS_SUCCESS,
-  GET_PLAYERS_FAIL,
   FILTER_PLAYERS,
   getPlayers,
   filterPlayers,
 } from '../players';
-
-// const middlewares = [thunk];
-// const mockStore = configureMockStore(middlewares);
 
 const playersReducerInitialState = {
   pending: false,

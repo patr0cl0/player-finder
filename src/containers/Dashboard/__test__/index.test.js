@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ConnectedDashboard, { Dashboard } from '../index';
+import { Dashboard } from '../index';
 
 const mockPlayersData = [
   {
